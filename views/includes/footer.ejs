@@ -1,0 +1,140 @@
+<style>
+  .footer {
+    position: relative;
+    padding: 2.5rem 0 1rem;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    width: 100%;
+    z-index: 100;
+  }
+
+  /* Set up the body to use flexbox for sticky footer */
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Ensure main content takes available space */
+  .main-content {
+    flex: 1 0 auto;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+  }
+
+  .footer-brand-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-brand {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: black;
+  }
+
+  .footer-tagline {
+    font-size: 0.8rem;
+    color: #4776e6;
+    margin-top: 0.3rem;
+    font-weight: 700;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    color: #777;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: #4776e6;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    color: #777;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+  }
+
+  .social-icon:hover {
+    color: #4776e6;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    color: #999;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #eee;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand-container">
+      <div class="footer-brand">RentEasy</div>
+      <div class="footer-tagline">Find You Perfect Home</div>
+    </div>
+
+    <div class="footer-links">
+      <b><a href="/">Home</a></b>
+      <b> <a href="/properties">Properties</a></b>
+      <b> <a href="/about">About</a></b>
+      <b> <a href="/contact">Contact</a></b>
+      <b> <a href="/privacy">Privacy</a></b>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#" class="social-icon"
+        ><i class="fa-brands fa-facebook-f"></i
+      ></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2023 RentEasy. All rights reserved.</p>
+  </div>
+</footer>

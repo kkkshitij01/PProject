@@ -1,0 +1,34 @@
+<% layout("/layouts/boilerplate")%>
+<link rel="stylesheet" href="/css/auth.css" />
+
+<div class="auth-container login-container">
+  <h1 class="auth-title">Welcome Back</h1>
+  <form action="/login" method="POST" class="needs-validation" novalidate>
+    <div class="input-container">
+      <i class="fa-solid fa-user input-icon"></i>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        class="input-field"
+        placeholder="Username"
+        required
+      />
+    </div>
+    <div class="input-container">
+      <i class="fa-solid fa-lock input-icon"></i>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="input-field"
+        placeholder="Password"
+        required
+      />
+    </div>
+    <button type="submit" class="auth-btn login-btn">Sign In</button>
+    <div class="auth-link">
+      <p>Don't have an account? <a href="/signup">Sign up</a></p>
+    </div>
+  </form>
+</div>
