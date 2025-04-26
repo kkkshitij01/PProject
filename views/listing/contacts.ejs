@@ -1,0 +1,126 @@
+<% layout("/layouts/boilerplate")%>
+<link rel="stylesheet" href="/css/contacts.css" />
+
+<div class="contacts-container">
+  <h2 class="contacts-heading">My Contact Queries</h2>
+
+  <% if (contacts.length === 0) { %>
+  <div class="no-contacts">
+    <i class="fa-solid fa-envelope-open"></i>
+    <h3>No Contact Queries Found</h3>
+    <p>
+      You don't have any contact queries yet. When you contact property owners
+      or when someone contacts you about your properties, they will appear here.
+    </p>
+  </div>
+  <% } else { %>
+  <div class="filter-tabs">
+    <button class="tab-btn active" onclick="filterContacts('all', event)">
+      All
+    </button>
+    <button class="tab-btn" onclick="filterContacts('sent', event)">
+      Sent
+    </button>
+    <button class="tab-btn" onclick="filterContacts('received', event)">
+      Received
+    </button>
+  </div>
+
+  <div class="contacts-grid">
+    <% for(let contact of contacts) { %> <% const isSent =
+    contact.requester._id.toString() === currUser._id.toString(); const
+    contactType = isSent ? 'sent' : 'received'; const otherParty = isSent ?
+    contact.owner : contact.requester; %>
+    <div class="contact-card <%= contactType %>">
+      <div class="badge-container">
+        <div class="badge <%= contactType %>-badge">
+          <%= isSent ? 'Sent' : 'Received' %>
+        </div>
+      </div>
+      <div class="contact-header">
+        <div class="property-info">
+          <a href="/listings/<%= contact.listing._id %>" class="property-link">
+            <h4><%= contact.listing.title %></h4>
+          </a>
+        </div>
+        <div class="date-info">
+          <%= new Date(contact.createdAt).toLocaleDateString('en-US', { year:
+          'numeric', month: 'short', day: 'numeric' }) %>
+        </div>
+      </div>
+
+      <div class="contact-body">
+        <div class="contact-row">
+          <strong><%= isSent ? 'To' : 'From' %>:</strong>
+          <span><%= otherParty.username %></span>
+        </div>
+        <div class="contact-row">
+          <strong>Name:</strong>
+          <span><%= contact.name %></span>
+        </div>
+        <div class="contact-row">
+          <strong>Email:</strong>
+          <span><%= contact.email %></span>
+        </div>
+        <div class="contact-row">
+          <strong>Phone:</strong>
+          <span><%= contact.phone %></span>
+        </div>
+        <div class="contact-message">
+          <strong>Message:</strong>
+          <p><%= contact.message %></p>
+        </div>
+      </div>
+    </div>
+    <% } %>
+
+    <!-- No results card for filtered queries -->
+    <div id="no-results-card" class="no-results" style="display: none">
+      <i class="fa-solid fa-filter-circle-xmark"></i>
+      <h3>No Matching Queries</h3>
+      <p>
+        There are no contact queries matching the current filter. Try selecting
+        a different filter option.
+      </p>
+    </div>
+  </div>
+  <% } %>
+</div>
+
+<script>
+  function filterContacts(type, event) {
+    // Remove active class from all buttons
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    // Add active class to clicked button
+    if (event && event.target) {
+      event.target.classList.add("active");
+    } else {
+      document
+        .querySelector(`.tab-btn[onclick*="${type}"]`)
+        .classList.add("active");
+    }
+
+    // Show all cards initially and hide no results card
+    document.querySelectorAll(".contact-card").forEach((card) => {
+      card.style.display = "block";
+    });
+    document.getElementById("no-results-card").style.display = "none";
+
+    // Filter cards based on selection
+    if (type !== "all") {
+      const cards = document.querySelectorAll(`.contact-card:not(.${type})`);
+      cards.forEach((card) => {
+        card.style.display = "none";
+      });
+
+      // Check if there are any visible cards
+      const visibleCards = document.querySelectorAll(`.contact-card.${type}`);
+      if (visibleCards.length === 0) {
+        document.getElementById("no-results-card").style.display = "flex";
+      }
+    }
+  }
+</script>
