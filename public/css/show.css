@@ -351,12 +351,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .review-card:hover {
   transform: translateY(-1px);
-  border: 2px solid #8d54e9ce;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 0 0 2px #8d54e9ce;
+  border-color: transparent;
 }
 
 .review-header {
@@ -787,6 +788,10 @@
     padding: 1.2rem;
   }
 
+  .review-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 0 0 2px #8d54e9ce;
+  }
+
   .reviewer-name {
     font-size: 0.95rem;
   }
@@ -808,6 +813,10 @@
 
   .review-card {
     padding: 1rem;
+  }
+
+  .review-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 0 0 2px #8d54e9ce;
   }
 
   .reviewer-info i {
@@ -844,6 +853,10 @@
 
   .review-card {
     padding: 0.8rem;
+  }
+
+  .review-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 0 0 2px #8d54e9ce;
   }
 
   .review-header {
@@ -925,6 +938,10 @@
 
   .review-card {
     padding: 0.7rem;
+  }
+
+  .review-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 0 0 2px #8d54e9ce;
   }
 
   .starability-basic {
