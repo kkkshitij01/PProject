@@ -52,12 +52,19 @@
     background: var(--primary-gradient);
     border-radius: 1.5rem;
     box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+    overflow: hidden;
   }
 
   .brand-icon i {
     font-size: 1.8rem;
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .brand-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .brand-text {
@@ -363,7 +370,7 @@
     <div class="brand">
       <a class="brand-link" href="/listings">
         <div class="brand-icon">
-          <i class="fa-solid fa-house-circle-check"></i>
+          <img src="/mainLogo.jpeg" alt="RentEase Logo" />
         </div>
         <div class="brand-text">
           <span class="brand-name">RentEase</span>
