@@ -776,3 +776,158 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* Responsive Reviews Section */
+@media (max-width: 992px) {
+  .reviews-grid {
+    gap: 1.2rem;
+  }
+
+  .review-card {
+    padding: 1.2rem;
+  }
+
+  .reviewer-name {
+    font-size: 0.95rem;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .reviews-section {
+    padding: 0.8rem;
+  }
+
+  .review-card {
+    padding: 1rem;
+  }
+
+  .reviewer-info i {
+    font-size: 1.3rem;
+  }
+
+  .review-form-container {
+    padding: 1.2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-label {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .comment-btn {
+    scale: 0.55;
+    margin-right: -60px;
+  }
+
+  .starability-basic {
+    min-height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 0.5rem;
+  }
+
+  .review-card {
+    padding: 0.8rem;
+  }
+
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .rating {
+    margin-left: 0.3rem;
+  }
+
+  .reviewer-info i {
+    font-size: 1.2rem;
+  }
+
+  .reviewer-name {
+    font-size: 0.9rem;
+  }
+
+  .review-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .delete-review-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .reviews-title {
+    font-size: 1.2rem;
+  }
+
+  .review-form-container {
+    padding: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+  }
+
+  .form-textarea {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .comment-btn {
+    scale: 0.5;
+    margin-right: -70px;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .starability-basic {
+    min-height: 40px;
+    transform: scale(0.9);
+    transform-origin: left center;
+  }
+}
+
+@media (max-width: 360px) {
+  .content-container {
+    width: 95%;
+    padding: 0;
+  }
+
+  .review-form-container,
+  .reviews-section {
+    padding: 0.7rem;
+  }
+
+  .review-card {
+    padding: 0.7rem;
+  }
+
+  .starability-basic {
+    transform: scale(0.8);
+  }
+}
