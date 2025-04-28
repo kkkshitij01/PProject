@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./review.js");
+const Contact = require("./contact.js");
 
 const listingSchema = new Schema({
   title: { type: String, required: true },
@@ -41,11 +42,12 @@ const listingSchema = new Schema({
   isAvailable: { type: Boolean, default: true },
 });
 
-//Mongoose middleware to delete all the comments associated with a listing
+//Mongoose middleware to delete all the comments and contact queries associated with a listing
 //on deletion of that listing
 listingSchema.post("findOneAndDelete", async (listing) => {
   if (listing) {
     await Review.deleteMany({ _id: { $in: listing.reviews } });
+    await Contact.deleteMany({ listing: listing._id });
   }
 });
 
