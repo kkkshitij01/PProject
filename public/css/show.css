@@ -285,7 +285,6 @@
 
 .user-details-container:hover,
 .review-form-container:hover {
-  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -355,7 +354,6 @@
 }
 
 .review-card:hover {
-  transform: translateY(-1px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 0 0 2px #8d54e9ce;
   border-color: transparent;
 }
@@ -773,8 +771,7 @@
 }
 
 .send-btn:hover {
-  background: linear-gradient(90deg, #3b68d8, #7d46d6);
-  transform: translateY(-2px);
+  background: linear-gradient(90deg, #7d46d6, #3b68d8);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
