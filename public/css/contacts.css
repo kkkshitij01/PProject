@@ -94,7 +94,6 @@
 }
 
 .contact-card:hover {
-  transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -236,7 +235,6 @@
 }
 
 .back-btn:hover {
-  transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   color: white;
 }
@@ -293,10 +291,10 @@
   }
 
   .badge-container {
-    left: 50%; /* Center the badge on mobile */
-    top: 6px; /* Consistent with desktop */
+    left: 50%;
+    top: 6px;
     transform: translateX(-50%) translateY(-50%);
-    z-index: 20; /* Higher z-index to appear above pseudo elements */
+    z-index: 20;
   }
 }
 
